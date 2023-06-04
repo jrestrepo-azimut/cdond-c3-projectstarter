@@ -17,7 +17,6 @@
   shell: |
     cd /home/ubuntu/web
     tar -xvf artifact.tar.gz
-    ls -al
 
 - name: Executing node
   become: true
