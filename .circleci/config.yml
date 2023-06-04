@@ -189,6 +189,14 @@ jobs:
     steps:
       - checkout
       - run:
+          name: Install dependencies
+          command: |
+            sudo apt-get update
+            curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" \
+                && unzip awscliv2.zip \
+                && ./aws/install \
+                && apt-get install -y less
+      - run:
           name: Run migrations
           command: |
             cd backend
@@ -215,10 +223,7 @@ jobs:
           name: Install dependencies
           command: |
             sudo apt-get update
-            curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" \
-                && unzip awscliv2.zip \
-                && ./aws/install \
-                && apt-get install -y less
+            sudo apt-get install -y tar gzip npm nodejs
       - run:
           name: Get backend url
           command: |
