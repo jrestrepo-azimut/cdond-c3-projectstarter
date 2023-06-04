@@ -300,6 +300,7 @@ jobs:
       - run:
           name: Backend smoke test.
           command: |
+              sleep 30
               export BACKEND_IP=$(aws ec2 describe-instances \
               --query 'Reservations[*].Instances[*].PublicIpAddress' \
               --output text)
