@@ -9,14 +9,14 @@
 - name: copy artifact
   become: true
   copy: 
-    src: ~/project/backend-artifact.tar.gz
-    dest: /home/ubuntu/web/backend-artifact.tar.gz
+    src: ~/project/backend/artifact.tar.gz
+    dest: /home/ubuntu/web/artifact.tar.gz
 
 - name: Extract artifact files
   become: true
   shell: |
     cd /home/ubuntu/web
-    tar -xvf backend-artifact.tar.gz
+    tar -xvf artifact.tar.gz
 
 - name: Executing node
   become: true
