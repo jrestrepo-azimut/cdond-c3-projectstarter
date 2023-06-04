@@ -295,13 +295,15 @@ jobs:
       - run:
           name: Install dependencies curl and awscli
           command: |
-             apk add --update curl aws-cli
+             apk add --update curl
+             pip install awscli
       - run:
           name: Get backend url
           command: |
               export BACKEND_IP=$(aws ec2 describe-instances \
               --query 'Reservations[*].Instances[*].PublicIpAddress' \
               --output text)
+              echo ${BACKEND_IP}
       - run:
           name: Backend smoke test.
           command: |
