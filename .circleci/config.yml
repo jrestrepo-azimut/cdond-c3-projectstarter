@@ -223,13 +223,13 @@ jobs:
       - image: amazon/aws-cli
     steps:
       - checkout
-      - attach_workspace:
-          at: .
       - run:
           name: Install dependencies
           command: |
             sudo apt-get update
             sudo apt-get install -y gzip tar npm nodejs
+      - attach_workspace:
+          at: .
       - run:
           name: Get backend url
           command: |
@@ -259,13 +259,13 @@ jobs:
       - add_ssh_keys:
           fingerprints:
             - '0e:6c:34:4b:50:fe:44:17:93:b3:f0:64:21:a2:f1:de'
-      - attach_workspace:
-          at: .
       - run:
           name: Install dependencies
           command: |
-            apk add --update tar gzip ansible nodejs npm
+            apk add --update tar gzip ansible nodejs npm curl
             pip install awscli
+      - attach_workspace:
+          at: .
       - run:
           name: Deploy backend
           command: |
