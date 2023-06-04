@@ -276,6 +276,8 @@ jobs:
             npm i
             npm run build
             cd ..
+            pwd
+            ls -al
             ## Zip the directory
             tar -C backend -czvf artifact.tar.gz .
             cd .circleci/ansible
@@ -291,9 +293,9 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Install dependencies
+          name: Install dependencies curl and awscli
           command: |
-             apk add --update curl
+             apk add --update curl aws-cli
       - run:
           name: Get backend url
           command: |
