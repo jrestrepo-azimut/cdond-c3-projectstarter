@@ -352,7 +352,7 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Get old stack workflow id
+          name: Remove old stacks and files
           command: |
             # your code here
             ## Fetch the Old workflow ID
@@ -365,12 +365,9 @@ jobs:
             export STACKS=($(aws cloudformation list-stacks --query "StackSummaries[*].StackName" \
                       --stack-status-filter CREATE_COMPLETE --no-paginate --output text)) 
             echo Stack names: "${STACKS[@]}"   
-      - run:
-          name: Remove old stacks and files
-          command: |
             if [[ "${STACKS[@]}" =~ "${OldWorkflowID}" ]]
             then
-              aws s3 rm "s3://${OldWorkflowID}" --recursive
+              aws s3 rm s3://${OldWorkflowID} --recursive 
               aws cloudformation delete-stack --stack-name "frontend-${OldWorkflowID}"
               aws cloudformation delete-stack --stack-name "backend-${OldWorkflowID}"
             fi
