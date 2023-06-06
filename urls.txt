@@ -1,7 +1,5 @@
 URL01=https://github.com/jrestrepo-azimut/cdond-c3-projectstarter
-URL02 = http://udapeople-1bb42bf.s3-website-us-east-1.amazonaws.com/#/employees
+URL02 = http://udapeople-35d720c.s3-website-us-east-1.amazonaws.com/#/employees
 URL03 = https://d1pht3xzjqg8q1.cloudfront.net
-URL04 = http://54.237.192.250:3030/api/status
-URL05 = http://ec2-54-204-125-48.compute-1.amazonaws.com:9090/targets
-
-change:  02, 05 y 05
+URL04 = http://44.203.186.239:3030/api/status
+URL05 = http://54.82.56.68:9090/targets
