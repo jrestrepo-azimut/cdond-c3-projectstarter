@@ -1,7 +1,0 @@
-URL01=https://github.com/jrestrepo-azimut/cdond-c3-projectstarter
-URL02 = http://udapeople-4c0c78b.s3-website-us-east-1.amazonaws.com/
-URL03 = https://d1pht3xzjqg8q1.cloudfront.net
-URL04 = http://ec2-54-90-88-88.compute-1.amazonaws.com:3030/api/status
-
-
-Cambiar la URL04 y los screenshot url02 y o4
